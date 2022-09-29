@@ -13,14 +13,14 @@
 
 #content h1 {
 	display: block;
-	font-size: 70px;
+	font-size: 40px;
 }
 
 #content h3 {
 	display: block;
 	font-size: 50px;
 	padding: 0px 5px;
-	color: #00aaaa;
+	color: #00ccaa;
 }
 
 #content button {
