@@ -1,0 +1,19 @@
+<script>
+
+	function readFile() {
+		fetch('questions.txt')
+			.then(response => response.text())
+			.then(data => console.log(data))
+	}
+
+</script>
+  
+<h1>Random team building question</h1>
+
+<h3 id="question"/>
+
+<p>Next question</p>
+
+<script>
+	readFile();
+</script>
