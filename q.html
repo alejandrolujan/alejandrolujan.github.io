@@ -1,9 +1,26 @@
 <script>
 
+	let questions = [];
+	let currentIndex = 0;
+
+	function shuffle(array) {
+		array.sort(() => Math.random() - 0.5);
+	}
+
 	function readFile() {
 		fetch('questions.txt')
 			.then(response => response.text())
-			.then(data => console.log(data))
+			.then(text => questions = text.split(/\n|\r/g);)
+			
+		console.log(questions);
+		shuffle(questions);
+		console.log("SHUFFLED");
+		console.log(questions);
+	}
+	
+	function nextQuestion() {
+		currentIndex += 1;
+		document.getElementById("question").innerHTML = questions[currentIndex];
 	}
 
 </script>
@@ -12,7 +29,7 @@
 
 <h3 id="question"/>
 
-<p>Next question</p>
+<p onClick="nextQuestion()">Next question</p>
 
 <script>
 	readFile();
