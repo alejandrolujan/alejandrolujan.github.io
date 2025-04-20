@@ -188,10 +188,6 @@ nav a:hover {
 
 
 @media screen and (max-width: 768px) {
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
   .section-content {
     padding: 20px;
   }
