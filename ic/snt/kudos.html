@@ -11,14 +11,18 @@
 				fetch('kudos.txt')
 					.then(response => response.text())
 					.then(text => {
-						kudos = text.split(/\n|\r/g)
+						console.log(text);
+						kudos = text.split(/\n|\r/g);
+						console.log(kudos);
 						});
 			}
 	
 			function showRandomKudo() {
 				readFile();
 				let randomIndex = Math.floor(Math.random() * kudos.length);				
+				console.log(randomIndex);
 				document.getElementById("kudos").innerHTML = kudos[randomIndex];
+				console.log(document.getElementById("kudos").innerHTML);
 			}
 
 		</script>
