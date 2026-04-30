@@ -16,8 +16,8 @@
 			}
 	
 			function showRandomKudo() {
-				let randomIndex = Math.floor(Math.random() * kudos.length);
 				readFile();
+				let randomIndex = Math.floor(Math.random() * kudos.length);				
 				document.getElementById("kudos").innerHTML = kudos[randomIndex];
 			}
 
