@@ -8,7 +8,7 @@
 			let kudos = [];
 
 			function readFile() {
-				fetch('kudos.txt')
+				return fetch('kudos.txt')
 					.then(response => response.text())
 					.then(text => {
 						console.log(text);
@@ -16,13 +16,16 @@
 						console.log(kudos);
 						});
 			}
-	
-			function showRandomKudo() {
-				readFile();
+
+			function showKudo() {
 				let randomIndex = Math.floor(Math.random() * kudos.length);				
 				console.log(randomIndex);
 				document.getElementById("kudos").innerHTML = kudos[randomIndex];
 				console.log(document.getElementById("kudos").innerHTML);
+			}
+	
+			function showRandomKudo() {
+				readFile().then(showKudo());				
 			}
 
 		</script>
