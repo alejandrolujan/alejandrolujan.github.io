@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Questions</title>
+	
+		<script>
+
+			let kudos = [];
+
+			function readFile() {
+				fetch('kudos.txt')
+					.then(response => response.text())
+					.then(text => {
+						kudos = text.split(/\n|\r/g)
+						});
+			}
+	
+			function showRandomKudo() {
+				let randomIndex = Math.floor(Math.random() * kudos.length);
+				readFile();
+				document.getElementById("kudos").innerHTML = kudos[randomIndex];
+			}
+
+		</script>
+	</head>  
+	
+	<body>
+		<div id="content">
+			<h1>Kudos</h1>
+
+			<h3 id="kudos">&nbsp;</h3>
+			<script>
+				showRandomKudo();
+			</script>
+		</div>
+	</body>
+</html>
