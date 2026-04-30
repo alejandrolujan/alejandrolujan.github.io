@@ -18,9 +18,13 @@
 
 #content h3 {
 	display: block;
-	font-size: 50px;
+	font-size: 40px;
 	padding: 0px 5px;
 	color: #00ccaa;
+}
+
+#content h3.nudge {
+	color: #ff780a;
 }
 
 #content button {

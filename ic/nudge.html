@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Nudges</title>
+	
+		<script>
+
+			let nudges = [];
+
+			function readFile() {
+				return fetch('nudge.txt')
+					.then(response => response.text())
+					.then(text => {
+						console.log(text);
+						nudges = text.split(/\n|\r/g);
+						console.log(nudges);
+						})					
+			}
+
+			function showNudge() {
+				let randomIndex = Math.floor(Math.random() * nudges.length);				
+				console.log(randomIndex);
+				document.getElementById("nudges").innerHTML = nudges[randomIndex];
+				console.log(document.getElementById("nudges").innerHTML);
+			}
+	
+			function showRandomNudge() {
+				readFile().then(showNudge);				
+			}
+
+		</script>
+	</head>  
+	
+	<body>
+		<div id="content">
+			<h1>Nudges</h1>
+
+			<h3 id="nudges" class="nudge">&nbsp;</h3>
+			<script>
+				showRandomNudge();
+			</script>
+		</div>
+	</body>
+</html>
